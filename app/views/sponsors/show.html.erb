@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<h2>Sponsor Detail</h2>
+
 
 <p>
   <strong>Name:</strong>
@@ -17,3 +19,7 @@
 
 <%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
 <%= link_to 'Back', sponsors_path %>
+
+<% content_for(:sidebar) do %>
+	<%= render(partial: "sponsor_events", object: @sponsor) %>
+<% end %>

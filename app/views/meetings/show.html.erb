@@ -1,6 +1,6 @@
-<div id="content">
-
 <p id="notice"><%= notice %></p>
+<h2>Meeting Detail</h2>
+
 
 <p>
   <strong>Name:</strong>
@@ -22,13 +22,11 @@
   <%= @meeting.end_time %>
 </p>
 
-<p>
-	<strong>Sponsors:</strong>
-	<% event.sponsors.each do |s|%>
-    <%= s.name%><br />
-	<% end%>
-</p>
-
 <%= link_to 'Edit', edit_meeting_path(@meeting) %> |
 <%= link_to 'Back', meetings_path %>
-</div>
+
+
+<% content_for(:sidebar) do %>
+	<h2>Meeting Location:</h2>
+	<%= @meeting.location.name %>
+<% end %>

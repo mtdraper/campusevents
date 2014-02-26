@@ -1,0 +1,23 @@
+<h2>Sponsor's <%= pluralize(sponsor_events.events.count, "Event" ) %>:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+	<% sponsor_events.events.each do |e| %>
+      <tr>
+        <td><%= link_to(e.name, e) %></td>
+        <td><%= e.start_date %></td>
+        <td><%= e.end_date %></td>
+      </tr>
+    <% end %>    
+  </tbody>
+</table>

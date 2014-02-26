@@ -1,6 +1,5 @@
-<div id="content">
 <p id="notice"><%= notice %></p>
-
+<h2>Event Detail</h2>
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
@@ -22,15 +21,14 @@
   <%= @event.url %>
 </p>
 
-<p>
-	<strong>Sponsors:</strong><br />
-	<% @event.sponsors.each do |s|%>
-    <%= s.name%><br />
-	<% end%>
-</p>
-</div>
 
-<div id="aside">
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
+<% content_for(:sidebar) do %>
+	
+	<%= render(partial: "event_sponsors", object: @event) %>
 	<h3>
 	Event Meetings:
 	</h3>
@@ -57,7 +55,6 @@
   </tbody>
 </table>
 			
-</div>
+<% end %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+

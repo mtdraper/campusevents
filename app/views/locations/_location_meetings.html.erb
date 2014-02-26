@@ -1,0 +1,27 @@
+<h2>Upcoming Meeting Table:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% future_meetings = location_meetings.meetings.select{ |x| x.start_time > DateTime.now}%>
+
+    <% filters = future_meetings[0,5]%>
+
+    <% filters.each do |m|%>
+      <tr>
+        <td><%= link_to(m.name, m) %></td>
+        <td><%= m.start_time %></td>
+        <td><%= m.end_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

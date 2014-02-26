@@ -1,5 +1,5 @@
-<div id="content">
 <p id="notice"><%= notice %></p>
+<h2>Location Detail</h2>
 
 <p>
   <strong>Name:</strong>
@@ -28,31 +28,9 @@
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
-</div>
-<div id="aside">
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% future_meetings = @location.meetings.select{ |x| x.start_time > DateTime.now}%>
+<% content_for(:sidebar) do %>
 
-    <% filters = future_meetings[0,5]%>
+<%= render(partial: "location_meetings", object: @location) %>
 
-    <% filters.each do |m|%>
-      <tr>
-        <td><%= m.name %></td>
-        <td><%= m.start_time %></td>
-        <td><%= m.end_time %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+<% end %>

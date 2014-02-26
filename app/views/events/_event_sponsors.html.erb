@@ -1,0 +1,6 @@
+<p>
+	<h2><%= pluralize(event_sponsors.sponsors.count, "Sponsor") %>:</h2>
+	<% event_sponsors.sponsors.each do |s|%>
+    <%= link_to(s.name, s) %><br />
+	<% end%>
+</p>

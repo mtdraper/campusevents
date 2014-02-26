@@ -16,14 +16,24 @@
 	</div>
 	<div id="navigation">
 		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="#">Contact us</a></li>
+			<li><%= link_to("Events", events_path)%></li>
+			<li><%= link_to("Attendees", attendees_path)%></li>
+			<li><%= link_to("Meetings", meetings_path)%></li>
+			<li><%= link_to("Locations", locations_path)%></li>
+			<li><%= link_to("Sponsors", sponsors_path)%></li>
 		</ul>
 	</div>
 	<div id="content-container">
-		<%= yield %>	
+		<div id="content">
+			<%= yield :layout %>
+		</div>
+		
+		<div id="aside">
+		<% if content_for?(:sidebar) %>
+			<%= yield :sidebar %>
+		<% end %>
+		</div>
+	
 		<div id="footer">
 			Copyright � Site name, 20XX
 		</div>
