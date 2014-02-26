@@ -1,3 +1,4 @@
+<div id="content">
 <h1>Listing meetings</h1>
 
 <table>
@@ -5,9 +6,9 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Start</th>
-      <th>End</th>
-      <th></th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Location</th>
       <th></th>
       <th></th>
     </tr>
@@ -18,8 +19,9 @@
       <tr>
         <td><%= meeting.name %></td>
         <td><%= meeting.description %></td>
-        <td><%= meeting.start %></td>
-        <td><%= meeting.end %></td>
+        <td><%= meeting.start_time %></td>
+        <td><%= meeting.end_time %></td>
+        <td><%= meeting.location.name %></td>
         <td><%= link_to 'Show', meeting %></td>
         <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
         <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,3 +33,4 @@
 <br>
 
 <%= link_to 'New Meeting', new_meeting_path %>
+</div>

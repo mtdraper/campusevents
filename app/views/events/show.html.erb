@@ -1,3 +1,4 @@
+<div id="content">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,10 +16,48 @@
   <%= @event.end_date %>
 </p>
 
+
 <p>
   <strong>Url:</strong>
   <%= @event.url %>
 </p>
+
+<p>
+	<strong>Sponsors:</strong><br />
+	<% @event.sponsors.each do |s|%>
+    <%= s.name%><br />
+	<% end%>
+</p>
+</div>
+
+<div id="aside">
+	<h3>
+	Event Meetings:
+	</h3>
+	<table>
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event.meetings.each do |meeting| %>
+      <tr>
+      	<td><%= meeting.start_time %></td>
+        <td><%= meeting.end_time %></td>
+        <td><%= meeting.name %></td>
+        <td><%= meeting.location.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+			
+</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

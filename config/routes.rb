@@ -1,7 +1,9 @@
 Campusevents::Application.routes.draw do
-  resources :locations
+  resources :attendees
 
   resources :meetings
+
+  resources :locations
 
   resources :sponsors
 

@@ -20,13 +20,22 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :start %><br>
-    <%= f.datetime_select :start %>
+    <%= f.label :start_time %><br>
+    <%= f.datetime_select :start_time %>
   </div>
   <div class="field">
-    <%= f.label :end %><br>
-    <%= f.datetime_select :end %>
+    <%= f.label :end_time %><br>
+    <%= f.datetime_select :end_time %>
   </div>
+    <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.collection_select :location_id, Location.all.collect, :id, :name, {:include_blank => "Please Select"} %>
+  </div>
+    <div class="field">
+    <%= f.label :event_id %><br>
+    <%= f.collection_select :event_id, Event.all.collect, :id, :name, {:include_blank => "Please Select"} %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -3,11 +3,11 @@
 one:
   name: MyString
   description: MyText
-  start: 2014-02-04 19:43:20
-  end: 2014-02-04 19:43:20
+  start_time: 2014-02-12 19:34:55
+  end_time: 2014-02-12 19:34:55
 
 two:
   name: MyString
   description: MyText
-  start: 2014-02-04 19:43:20
-  end: 2014-02-04 19:43:20
+  start_time: 2014-02-12 19:34:55
+  end_time: 2014-02-12 19:34:55

@@ -1,3 +1,5 @@
+<div id="content">
+
 <h1>Listing events</h1>
 
 <table>
@@ -20,6 +22,10 @@
         <td><%= event.start_date %></td>
         <td><%= event.end_date %></td>
         <td><%= event.url %></td>
+        <td><% event.sponsors.each do |s|%>
+        	<%= s.name%><br />
+        	<% end%>
+        </td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,3 +37,4 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+</div>
